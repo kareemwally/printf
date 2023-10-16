@@ -18,7 +18,8 @@ putchar(c);
  */
 int print_str (char *st, int *count)
 {
-int i, r = *count;
+size_t i;
+int r = *count;
 for (i = 0; i < strlen(st); i++)
 {
 putchar(st[i]);
@@ -70,7 +71,8 @@ return (r);
  */
 int _printf(const char *format, ...)
 {
-int i, count = 0;
+size_t i;
+int count = 0;
 va_list res;
 va_start(res, format);
 for (i = 0; i < strlen(format); i++)
