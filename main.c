@@ -1,4 +1,10 @@
-#include"main.h"
+#include "main.h"
+int main()
+{
+int i =_printf("i%s%s%c%%","want","to",'k');
+printf("%d",i);
+return 0;
+}
 /**
  *print_ch-function
  *Description:only prints character
@@ -37,33 +43,6 @@ void print_persentage()
 putchar(37);
 }
 /**
- *formatting-function
- *Description:this function decides the function to print 
- *@res:the list of arguments
- *@a:the specifying char
- *@count:the total number of bytes
- *Return:(int)
- */
-int formatting(va_list res, char a, int *count)
-{
-int r = * count;
-switch (a)
-{
-case 's':
-r = print_str(va_arg(res, char *), count);
-break;
-case 'c':
-print_ch(va_arg(res, int));
-r++;
-break;
-case '%':
-print_persentage();
-r++;
-break;
-}
-return (r);
-}
-/**
  *_printf-function
  *Description:this function is similar to printf
  *@format:the stream we need to print to stdout
@@ -77,18 +56,28 @@ va_list res;
 va_start(res, format);
 for (i = 0; i < strlen(format); i++)
 {
-if (format[i] == '%')
+if (format[i] == '%' && format[i + 1] == 's')
 {
 i++;
-count = formatting(res, format[i], &count);
-va_arg(res, int);
+count = print_str(va_arg(res, char *), &count);
+}
+else if (format[i] == '%' && format[i + 1] == 'c')
+{
+i++;
+print_ch(va_arg(res, int));
+count++;
+}
+else if (format[i] == '%' && format[i + 1] == '%')
+{
+count++;
+print_persentage();
 }
 else
 {
-putchar(format[i]);
+print_ch(format[i]);
 count++;
 }
 }
 va_end(res);
-return (count - 1);
+return (count);
 }
