@@ -1,10 +1,4 @@
 #include "main.h"
-int main()
-{
-int i =_printf("i%s%s%c%%","want","to",'k');
-printf("%d",i);
-return 0;
-}
 /**
  *print_ch-function
  *Description:only prints character
@@ -13,7 +7,7 @@ return 0;
  */
 void print_ch (char c)
 {
-putchar(c);
+write(1, &c, 1);
 }
 /**
  *print_str-function
@@ -28,7 +22,7 @@ size_t i;
 int r = *count;
 for (i = 0; i < strlen(st); i++)
 {
-putchar(st[i]);
+print_ch(st[i]);
 r++;
 }
 return (r);
@@ -38,9 +32,10 @@ return (r);
  *Description:simple function to print %
  *Return:(void)
  */
-void print_persentage()
+void print_persentage(void)
 {
-putchar(37);
+int i = 37;
+write(1, &i, 1);
 }
 /**
  *_printf-function
@@ -50,7 +45,7 @@ putchar(37);
  */
 int _printf(const char *format, ...)
 {
-size_t i;
+size_t i; 
 int count = 0;
 va_list res;
 va_start(res, format);
@@ -70,7 +65,7 @@ count++;
 else if (format[i] == '%' && format[i + 1] == '%')
 {
 count++;
-print_persentage();
+print_persentage(void);
 }
 else
 {
