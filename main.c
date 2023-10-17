@@ -49,6 +49,10 @@ size_t i;
 int count = 0;
 va_list res;
 va_start(res, format);
+if (strlen(format) == 0)
+{
+return (-1);
+}
 for (i = 0; i < strlen(format); i++)
 {
 if (format[i] == '%' && format[i + 1] == 's')
