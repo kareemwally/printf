@@ -19,13 +19,15 @@ static int	_print(char c, va_list ptr)
 	else if (c == 'u')
 		_putnbr(va_arg(ptr, unsigned int), &count);
 	else if (c == 'x')
-		_puthexa_lower(va_arg(ptr, unsigned int), &count);
+		_putnbr_base(va_arg(ptr, unsigned int), "0123456789abcdef", &count);
 	else if (c == 'X')
-		_puthexa_upper(va_arg(ptr, unsigned int), &count);
+		_putnbr_base(va_arg(ptr, unsigned int), "0123456789ABCDEF", &count);
+	else if (c == 'o')
+		_putnbr_base(va_arg(ptr, unsigned int), "012345678", &count);
 	else if (c == 'p')
 	{
 		count += write(1, "0x", 2);
-		_putaddress(va_arg(ptr, unsigned long), &count);
+		_putnbr_base(va_arg(ptr, unsigned int), "0123456789abcdef", &count);
 	}
 	else if (c == 's')
 		return (_putstr(va_arg(ptr, char *)));
