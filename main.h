@@ -4,6 +4,10 @@
 #include<unistd.h>
 #include<stdarg.h>
 
-int _printf(const char *format, ...);
+int		_printf(const char *format, ...);
+int		_putchar(char c);
+size_t	_putstr(char *str);
+void	_putnbr(int nbr, size_t *count);
+size_t	_strlen(const char *str);
 
 #endif
