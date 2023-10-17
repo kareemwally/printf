@@ -4,7 +4,7 @@
  *_putstr-function
  *Description:only prints strings to stdout
  *@str:string we need to print
- *Return:(void)
+ *Return:(i)
  */
 size_t	_putstr(char *str)
 {
