@@ -10,7 +10,7 @@
 */
 void	_putnbr_base(long nbr, char *base, size_t *count)
 {
-	int		lbase;
+	int	lbase;
 
 	lbase = _strlen(base);
 	if (nbr < 0)

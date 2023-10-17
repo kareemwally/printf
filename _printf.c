@@ -23,7 +23,9 @@ static int	_print(char c, va_list ptr)
 	else if (c == 'X')
 		_putnbr_base(va_arg(ptr, unsigned int), "0123456789ABCDEF", &count);
 	else if (c == 'o')
-		_putnbr_base(va_arg(ptr, unsigned int), "012345678", &count);
+		_putnbr_base(va_arg(ptr, unsigned int), "01234567", &count);
+	else if (c == 'b')
+		_putnbr_base(va_arg(ptr, unsigned int), "01", &count);
 	else if (c == 'p')
 	{
 		count += write(1, "0x", 2);
