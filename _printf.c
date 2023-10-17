@@ -8,7 +8,7 @@
  */
 void    print_ch(char c)
 {
-        write(1, &c, 1);
+	write(1, &c, 1);
 }
 
 /**
@@ -19,12 +19,12 @@ void    print_ch(char c)
  */
 size_t  _strlen(const char *str)
 {
-        size_t  len;
+	size_t  len;
 
-        len = 0;
-        while (str[len])
-                len++;
-        return (len);
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
 }
 
 /**
@@ -36,13 +36,13 @@ size_t  _strlen(const char *str)
  */
 void    print_str(char *str, int *count)
 {
-        size_t i;
+	size_t i;
 
-        for (i = 0; i < _strlen(str); i++)
-        {
-                print_ch(str[i]);
-                (*count)++;
-        }
+	for (i = 0; i < _strlen(str); i++)
+	{
+		print_ch(str[i]);
+		(*count)++;
+	}
 }
 
 /**
@@ -53,37 +53,37 @@ void    print_str(char *str, int *count)
  */
 int     _printf(const char *format, ...)
 {
-        size_t  i;
-        int     count;
-        va_list res;
+	size_t  i;
+	int     count;
+	va_list res;
 
-        count = 0;
-        va_start(res, format);
-        for (i = 0; i < _strlen(format); i++)
-        {
-                if (format[i] == '%' && format[i + 1] == 's')
-                {
-                        print_str(va_arg(res, char *), &count);
-                        i++;
-                }
-                else if (format[i] == '%' && format[i + 1] == 'c')
-                {
-                        print_ch(va_arg(res, int));
-                        count++;
-                        i++;
-                }
-                else if (format[i] == '%' && format[i + 1] == '%')
-                {
-                        print_ch("%");
-                        count++;
-                        i++;
-                }
-                else if (format[i] != '\0')
-                {
-                        print_ch(format[i]);
-                        count++;
-                }
-        }
-        va_end(res);
-        return (count);
+	count = 0;
+	va_start(res, format);
+	for (i = 0; i < _strlen(format); i++)
+	{
+		if (format[i] == '%' && format[i + 1] == 's')
+		{
+			print_str(va_arg(res, char *), &count);
+			i++;
+		}
+		else if (format[i] == '%' && format[i + 1] == 'c')
+		{
+			print_ch(va_arg(res, int));
+			count++;
+			i++;
+		}
+		else if (format[i] == '%' && format[i + 1] == '%')
+		{
+			print_ch('%');
+			count++;
+			i++;
+		}
+		else if (format[i] != '\0')
+		{
+			print_ch(format[i]);
+			count++;
+		}
+	}
+	va_end(res);
+	return (count);
 }
