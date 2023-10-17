@@ -11,6 +11,6 @@ void	_putnbr(int nbr, size_t *count);
 size_t	_strlen(const char *str);
 void	_putnbr_base(long nbr, char *base, size_t *count);
 size_t	_putrev_str(char *str);
-int	putrot_13(char *str);
+int	_putrot_13(char *str);
 
 #endif

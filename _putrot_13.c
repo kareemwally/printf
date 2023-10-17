@@ -1,16 +1,17 @@
 #include "main.h"
+
 /**
- * putrot_13 - printf str to ROT13 place into buffer
- * @args: type struct va_arg where is allocated printf arguments
- * Return: counter
- *
+ *_putrot_13-function
+ *Description:this function is similar to printf
+ *@s:the string
+ *Return:(int)
  */
-int putrot_13(char *s)
+int _putrot_13(char *s)
 {
 	int i, j, counter = 0;
-	int k = 0;
-	char alpha[] = {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
-	char beta[] = {"nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM"};
+	int	k = 0;
+	char	alpha[] = {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
+	char	beta[] = {"nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM"};
 
 	if (s == NULL)
 		s = "(null)";
