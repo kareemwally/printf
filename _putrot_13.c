@@ -5,11 +5,10 @@
  * Return: counter
  *
  */
-int putrot_13(va_list args)
+int putrot_13(char *s)
 {
 	int i, j, counter = 0;
 	int k = 0;
-	char *s = va_arg(args, char*);
 	char alpha[] = {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
 	char beta[] = {"nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM"};
 
