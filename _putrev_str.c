@@ -15,12 +15,14 @@ size_t	_putrev_str(char *str)
 	if (!str)
 		return (write(1, "(null)", 6));
 	j = _strlen(str);
-	while (j >= 0)
+	while (j)
 	{
 		write(1, &str[j], 1);
 		i++;
 		j--;
 	}
+	write(1, &str[j], 1);
+	i++;
 	return (i);
 }
 
