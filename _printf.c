@@ -2,7 +2,7 @@
 
 /**
  *_print-function
- *Description:this fucntion checks for the specifier and calls the right function
+ *Description:checks for the specifier and calls the right function
  *@c:the specifier we need to check
  *@ptr:the pointer to the arguments passed to the function _printf
  *Return:(int)
