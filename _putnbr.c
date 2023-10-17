@@ -6,7 +6,7 @@
 * @count: number of bytes printed to stdout
 * Return: void
 */
-void	_putnbr(int nbr, size_t *count)
+void	_putnbr(long nbr, size_t *count)
 {
 	char	c;
 

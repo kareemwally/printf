@@ -7,7 +7,7 @@
 int	_printf(const char *format, ...);
 int	_putchar(char c);
 size_t	_putstr(char *str);
-void	_putnbr(int nbr, size_t *count);
+void	_putnbr(long nbr, size_t *count);
 size_t	_strlen(const char *str);
 void	_putnbr_base(long nbr, char *base, size_t *count);
 size_t	_putrev_str(char *str);
