@@ -33,6 +33,8 @@ static int	_print(char c, va_list ptr)
 	}
 	else if (c == 's')
 		return (_putstr(va_arg(ptr, char *)));
+	else if (c == 'R')
+		return (_putrot_13(va_arg(ptr, char *)));
 	else if (c == 'r')
 		return (_putrev_str(va_arg(ptr, char *)));
 	else
