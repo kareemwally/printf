@@ -41,7 +41,7 @@ int	_printf(const char *format, ...)
 	while (format[i])
 	{
 		if (format[i] == '%' && format[i + 1])
-			count += _print(format[++i], args);
+			count += _print(format[i + 1], args);
 		else if (format[i] != '%')
 			count += write(1, &format[i], 1);
 		i++;
