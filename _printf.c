@@ -74,7 +74,7 @@ int     _printf(const char *format, ...)
                 }
                 else if (format[i] == '%' && format[i + 1] == '%')
                 {
-                        print_ch("%");
+                        print_ch('%');
                         count++;
                         i++;
                 }
