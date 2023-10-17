@@ -4,7 +4,6 @@
  *_putstr-function
  *Description:only prints strings to stdout
  *@str:string we need to print
- *@count:total number of bytes to print
  *Return:(void)
  */
 size_t	_putstr(char *str)
