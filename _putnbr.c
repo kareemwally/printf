@@ -13,7 +13,7 @@ void	_putnbr(int nbr, size_t *count)
 	if (nbr == -2147483648)
 	{
 		*count += write(1, "-2147483648", 11);
-		return ;
+		return;
 	}
 	if (nbr < 0)
 	{
