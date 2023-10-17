@@ -33,6 +33,8 @@ static int	_print(char c, va_list ptr)
 	}
 	else if (c == 's')
 		return (_putstr(va_arg(ptr, char *)));
+	else if (c == 'r')
+		return (_putrev_str(va_arg(ptr, char *)));
 	else
 		return (write(1, &c, 1));
 	return (count);
